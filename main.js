@@ -317,26 +317,63 @@ if (menuToggle && navLinks) {
   });
 }
 
-// Contact form handler
-function handleFormSubmit(e) {
+// Contact form handler - Web3Forms Direct Email Delivery
+async function handleFormSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value;
-
-  const mailtoLink = `mailto:ab.bentaoit@gmail.com?subject=${encodeURIComponent(subject + ' - ' + name)}&body=${encodeURIComponent("Nombre: " + name + "\nEmail: " + email + "\n\n" + message)}`;
-
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
   const feedback = document.getElementById('formFeedback');
-  feedback.classList.remove('hidden');
-  feedback.className = 'form-feedback success';
-  feedback.textContent = currentLang === 'es' 
-    ? '¡Gracias! Abriendo tu cliente de correo para enviar el mensaje directamente a ab.bentaoit@gmail.com...' 
-    : 'Thank you! Opening your email client to send the message directly to ab.bentaoit@gmail.com...';
+  const submitBtnSpan = submitBtn ? submitBtn.querySelector('span') : null;
+  const originalBtnText = submitBtnSpan ? submitBtnSpan.textContent : '';
 
-  setTimeout(() => {
-    window.location.href = mailtoLink;
-  }, 700);
+  if (feedback) {
+    feedback.className = 'form-feedback hidden';
+  }
+
+  // Disable button and show loading status
+  if (submitBtn) submitBtn.disabled = true;
+  if (submitBtnSpan) {
+    submitBtnSpan.textContent = currentLang === 'es' ? 'Enviando mensaje...' : 'Sending message...';
+  }
+
+  const formData = new FormData(form);
+  const jsonObject = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(jsonObject)
+    });
+
+    const result = await response.json();
+
+    if (response.status === 200 && result.success) {
+      if (feedback) {
+        feedback.className = 'form-feedback success';
+        feedback.textContent = currentLang === 'es'
+          ? '✅ ¡Mensaje enviado con éxito! Te responderé lo antes posible.'
+          : '✅ Message sent successfully! I will get back to you as soon as possible.';
+      }
+      form.reset();
+    } else {
+      throw new Error(result.message || 'Error al enviar');
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    if (feedback) {
+      feedback.className = 'form-feedback error';
+      feedback.textContent = currentLang === 'es'
+        ? '❌ Hubo un problema al enviar el mensaje. Por favor, escríbeme directamente a ab.bentaoit@gmail.com'
+        : '❌ An error occurred while sending. Please contact me directly at ab.bentaoit@gmail.com';
+    }
+  } finally {
+    if (submitBtn) submitBtn.disabled = false;
+    if (submitBtnSpan) submitBtnSpan.textContent = originalBtnText;
+  }
 }
 
 // Start typewriter on DOMContentLoaded

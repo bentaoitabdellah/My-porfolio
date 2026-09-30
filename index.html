@@ -645,11 +645,14 @@
             <p class="form-subtitle" data-i18n="form_sub">¿Tienes una oferta de prácticas, proyecto freelance o propuesta laboral? Escríbeme directamente.</p>
             
             <form id="contactForm" onsubmit="handleFormSubmit(event)">
+              <input type="hidden" name="access_key" value="89ed8c8e-365a-4286-a7e5-64c248cf184b" />
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
               <div class="form-group">
                 <label for="name" data-i18n="form_name">Tu Nombre</label>
                 <div class="input-with-icon">
                   <i data-lucide="user"></i>
-                  <input type="text" id="name" required placeholder="Ej: Carlos García" />
+                  <input type="text" id="name" name="name" required placeholder="Ej: Carlos García" />
                 </div>
               </div>
 
@@ -657,7 +660,7 @@
                 <label for="email" data-i18n="form_email">Tu Correo Electrónico</label>
                 <div class="input-with-icon">
                   <i data-lucide="at-sign"></i>
-                  <input type="email" id="email" required placeholder="tu@empresa.com" />
+                  <input type="email" id="email" name="email" required placeholder="tu@empresa.com" />
                 </div>
               </div>
 
@@ -665,7 +668,7 @@
                 <label for="subject" data-i18n="form_subject">Asunto</label>
                 <div class="input-with-icon">
                   <i data-lucide="tag"></i>
-                  <input type="text" id="subject" required placeholder="Propuesta de prácticas / Proyecto" />
+                  <input type="text" id="subject" name="subject" required placeholder="Propuesta de prácticas / Proyecto" />
                 </div>
               </div>
 
@@ -673,11 +676,11 @@
                 <label for="message" data-i18n="form_message">Mensaje</label>
                 <div class="input-with-icon textarea-icon">
                   <i data-lucide="message-square"></i>
-                  <textarea id="message" rows="4" required placeholder="Cuéntame sobre la oportunidad o proyecto..."></textarea>
+                  <textarea id="message" name="message" rows="4" required placeholder="Cuéntame sobre la oportunidad o proyecto..."></textarea>
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block">
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-block">
                 <i data-lucide="send"></i>
                 <span data-i18n="form_submit">Enviar Mensaje</span>
               </button>
