@@ -514,6 +514,10 @@ function initBackgroundConstellation() {
    3D TILT EFFECT & INTERACTIVE CARD GLOW (HOVER PERSPECTIVE)
    ========================================================================== */
 function init3DCardTilt() {
+  if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    return; // Disable on touch devices for fluid native scrolling
+  }
+
   const tiltCards = document.querySelectorAll(
     '.project-card, .skill-category-card, .edu-card, .timeline-content, .contact-card, .contact-form-wrapper, .about-card'
   );
