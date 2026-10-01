@@ -1,5 +1,5 @@
 /**
- * PORTFOLIO JAVASCRIPT - ABDELLAH BENTAOUIT
+ * PORTFOLIO JAVASCRIPT - ABDELLAH BENTAOIT
  * Typewriter effect, multilingual support (ES/EN), mobile nav, contact form handling
  */
 
