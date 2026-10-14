@@ -80,17 +80,21 @@ const translations = {
     edu_bach_details: "Título oficial de bachillerato homologado con éxito, que otorga la base formativa y el acceso directo al ciclo formativo de grado superior en tecnología.",
     tag_proj: "Trabajos Realizados",
     title_proj: "Proyectos Destacados",
+    heading_appstore: "Aplicaciones Publicadas en App Store",
+    heading_other: "Otros Proyectos Web & Software",
+    proj_delivered: "Proyecto Finalizado",
+    proj_academic: "Software DAM",
     filter_all: "Todos",
     filter_ios: "Apps iOS / App Store",
     filter_web: "Desarrollo Web",
     filter_software: "Software DAM",
     btn_view_appstore: "Ver en App Store",
     tag_live: "En Vivo",
-    proj_ghostvault_badge: "App iOS / Seguridad",
+    proj_ghostvault_badge: "Seguridad iOS",
     proj_ghostvault_title: "GhostVault: Gestor Seguro & MFA",
     proj_ghostvault_sub: "Bóveda cifrada de contraseñas, tokens TOTP/MFA y seguridad biométrica",
     proj_ghostvault_desc: "Aplicación nativa para iPhone e iPad diseñada para almacenar y proteger credenciales, códigos TOTP/MFA con escáner QR, generador de claves y biometría (Face ID / PIN). Cifrado avanzado 100% local sin depender de servidores en la nube.",
-    proj_cooked_badge: "App iOS / Bienestar",
+    proj_cooked_badge: "Bienestar iOS",
     proj_cooked_title: "Cooked: Bienestar Digital",
     proj_cooked_sub: "Control de tiempo de pantalla, descansos y gamificación de hábitos",
     proj_cooked_desc: "Herramienta integral para recuperar el equilibrio personal y reducir distracciones. Monitoreo de tiempo en pantalla con APIs nativas del sistema, métricas diarias/semanales, retos al aire libre verificados, logros gamificados y procesamiento 100% privado en el dispositivo.",
@@ -197,17 +201,21 @@ const translations = {
     edu_bach_details: "Officially accredited high school education providing full eligibility and direct academic entry to higher technological degrees in Spain.",
     tag_proj: "Portfolio Works",
     title_proj: "Featured Projects",
+    heading_appstore: "Published Apps on App Store",
+    heading_other: "Other Web & Software Projects",
+    proj_delivered: "Completed Project",
+    proj_academic: "DAM Software",
     filter_all: "All",
     filter_ios: "iOS Apps / App Store",
     filter_web: "Web Development",
     filter_software: "DAM Software",
     btn_view_appstore: "View on App Store",
     tag_live: "Live",
-    proj_ghostvault_badge: "iOS App / Security",
+    proj_ghostvault_badge: "iOS Security",
     proj_ghostvault_title: "GhostVault: Secure Vault & MFA",
     proj_ghostvault_sub: "Encrypted password vault, TOTP tokens & biometric security",
     proj_ghostvault_desc: "Native iPhone & iPad application engineered to securely store credentials, TOTP/MFA authenticator codes with QR scanner, password generator, and biometric access (Face ID / PIN). Operates with 100% on-device advanced encryption with zero cloud dependency.",
-    proj_cooked_badge: "iOS App / Wellness",
+    proj_cooked_badge: "iOS Wellbeing",
     proj_cooked_title: "Cooked: Digital Wellbeing",
     proj_cooked_sub: "Screen time tracking, digital detox & habit gamification",
     proj_cooked_desc: "Comprehensive solution to regain digital focus and balance screen time. Features native tracking with Apple DeviceActivity APIs, daily/weekly analytics dashboards, verified outdoor breaks, gamified level milestones, and 100% on-device private processing.",
@@ -340,6 +348,28 @@ function filterProjects(category) {
       card.classList.add('filter-hidden');
     }
   });
+
+  const subIos = document.getElementById('subheadingIos');
+  const subOther = document.getElementById('subheadingOther');
+  const gridFeatured = document.querySelector('.projects-featured-grid');
+  const gridOther = document.querySelector('.projects-other-grid');
+
+  if (category === 'all') {
+    if (subIos) subIos.style.display = 'flex';
+    if (subOther) subOther.style.display = 'flex';
+    if (gridFeatured) gridFeatured.style.display = 'grid';
+    if (gridOther) gridOther.style.display = 'grid';
+  } else if (category === 'ios') {
+    if (subIos) subIos.style.display = 'flex';
+    if (subOther) subOther.style.display = 'none';
+    if (gridFeatured) gridFeatured.style.display = 'grid';
+    if (gridOther) gridOther.style.display = 'none';
+  } else {
+    if (subIos) subIos.style.display = 'none';
+    if (subOther) subOther.style.display = 'flex';
+    if (gridFeatured) gridFeatured.style.display = 'none';
+    if (gridOther) gridOther.style.display = 'grid';
+  }
 
   if (window.lucide) {
     window.lucide.createIcons();
