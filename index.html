@@ -84,7 +84,7 @@
           </h2>
 
           <p class="hero-description" data-i18n="hero_desc">
-            Estudiante de 2º año de <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong> con amplia experiencia en programación de software, desarrollo web y creación de contenido audiovisual profesional.
+            Estudiante de 2º año de <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong> y desarrollador de aplicaciones con <strong>apps publicadas en Apple App Store</strong>, desarrollo web y creación de contenido audiovisual profesional.
           </p>
 
           <div class="hero-cta">
@@ -159,7 +159,7 @@
               "Responsable, creativo y con pasión por resolver problemas mediante tecnología moderna y soluciones visuales de alto impacto."
             </p>
             <p class="about-text" data-i18n="about_p1">
-              Soy estudiante de segundo año de <strong>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</strong> en el <strong>IES Las Salinas</strong>. Cuento con una sólida formación en fundamentos de ingeniería de software, arquitectura orientada a objetos (POO), diseño y gestión de bases de datos relacionales, así como desarrollo web completo.
+              Soy estudiante de segundo año de <strong>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</strong> en el <strong>IES Las Salinas</strong>. He diseñado, programado y publicado <strong>aplicaciones nativas en la App Store de Apple</strong>, contando con una sólida formación en ingeniería de software, arquitectura orientada a objetos (POO), bases de datos y desarrollo web.
             </p>
             <p class="about-text" data-i18n="about_p2">
               Además del desarrollo de código, poseo habilidades destacadas en <strong>fotografía, edición y montaje de vídeo profesional</strong> y creación de contenido digital, lo que me permite aportar una visión integral tanto a nivel técnico como estético y de experiencia de usuario (UI/UX).
@@ -167,12 +167,16 @@
 
             <div class="about-stats">
               <div class="stat-item">
+                <span class="stat-number">2</span>
+                <span class="stat-label" data-i18n="stat_apps">Apps en App Store</span>
+              </div>
+              <div class="stat-item">
                 <span class="stat-number">2º</span>
                 <span class="stat-label" data-i18n="stat_course">Año DAM Actual</span>
               </div>
               <div class="stat-item">
-                <span class="stat-number">100%</span>
-                <span class="stat-label" data-i18n="stat_commitment">Compromiso & Aprendizaje</span>
+                <span class="stat-number">+6M</span>
+                <span class="stat-label" data-i18n="stat_exp">Experiencia Web</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number">4</span>
@@ -508,9 +512,118 @@
           <div class="section-line"></div>
         </div>
 
+        <!-- Filter tabs -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')">
+            <span data-i18n="filter_all">Todos</span>
+            <span class="filter-count">5</span>
+          </button>
+          <button class="filter-btn" data-filter="ios" onclick="filterProjects('ios')">
+            <svg class="apple-svg" viewBox="0 0 170 170" width="13" height="13" fill="currentColor">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.58-7.73-11.65-14.07-5.59-8.7-10.05-18.7-13.38-30.01-3.33-11.31-5-22.39-5-33.24 0-16.14 4.16-29.41 12.49-39.81 8.32-10.4 18.7-15.68 31.14-15.85 4.35 0 9.29 1.14 14.83 3.42 5.54 2.28 9.29 3.5 11.24 3.66 1.74 0 5.67-1.33 11.79-3.99 6.13-2.66 11.39-3.83 15.79-3.51 11.53.64 21.05 4.9 28.56 12.78-9.87 5.98-14.72 14.35-14.55 25.11.16 8.58 3.37 15.82 9.63 21.72 6.26 5.9 13.78 9.38 22.56 10.44-2.18 6.52-4.91 13.56-8.19 21.13zm-31.57-111.4c0-7.38 2.65-14.12 7.95-20.21 5.3-6.1 11.69-9.64 19.17-10.64.44 1.3.66 2.6.66 3.9 0 7.39-2.73 14.28-8.19 20.67-5.46 6.39-11.96 10-19.51 10.83-.09-1.52-.08-3.04-.08-4.55z"/>
+            </svg>
+            <span data-i18n="filter_ios">Apps iOS / App Store</span>
+            <span class="filter-count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="web" onclick="filterProjects('web')">
+            <i data-lucide="globe"></i>
+            <span data-i18n="filter_web">Desarrollo Web</span>
+            <span class="filter-count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="software" onclick="filterProjects('software')">
+            <i data-lucide="cpu"></i>
+            <span data-i18n="filter_software">Software DAM</span>
+            <span class="filter-count">1</span>
+          </button>
+        </div>
+
         <div class="projects-grid">
-          <!-- Project 1: Restaurant Web -->
-          <div class="project-card">
+          <!-- Project 1: GhostVault App (iOS / App Store) -->
+          <div class="project-card project-card-featured" data-category="ios">
+            <div class="project-visual bg-gradient-ghostvault">
+              <span class="store-badge-pill">
+                <svg class="apple-svg" viewBox="0 0 170 170" width="12" height="12" fill="currentColor">
+                  <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.58-7.73-11.65-14.07-5.59-8.7-10.05-18.7-13.38-30.01-3.33-11.31-5-22.39-5-33.24 0-16.14 4.16-29.41 12.49-39.81 8.32-10.4 18.7-15.68 31.14-15.85 4.35 0 9.29 1.14 14.83 3.42 5.54 2.28 9.29 3.5 11.24 3.66 1.74 0 5.67-1.33 11.79-3.99 6.13-2.66 11.39-3.83 15.79-3.51 11.53.64 21.05 4.9 28.56 12.78-9.87 5.98-14.72 14.35-14.55 25.11.16 8.58 3.37 15.82 9.63 21.72 6.26 5.9 13.78 9.38 22.56 10.44-2.18 6.52-4.91 13.56-8.19 21.13zm-31.57-111.4c0-7.38 2.65-14.12 7.95-20.21 5.3-6.1 11.69-9.64 19.17-10.64.44 1.3.66 2.6.66 3.9 0 7.39-2.73 14.28-8.19 20.67-5.46 6.39-11.96 10-19.51 10.83-.09-1.52-.08-3.04-.08-4.55z"/>
+                </svg>
+                <span>App Store</span>
+              </span>
+              <div class="app-icon-wrapper">
+                <img src="ghostvault-icon.png" alt="GhostVault App Icon" class="app-card-icon" />
+              </div>
+              <span class="project-category" data-i18n="proj_ghostvault_badge">App iOS / Seguridad</span>
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title" data-i18n="proj_ghostvault_title">GhostVault: Gestor Seguro & MFA</h3>
+                <span class="rating-tag">&#9733; 5.0</span>
+              </div>
+              <p class="project-subtitle" data-i18n="proj_ghostvault_sub">Bóveda cifrada de contraseñas, tokens TOTP/MFA y seguridad biométrica</p>
+              <p class="project-desc" data-i18n="proj_ghostvault_desc">
+                Aplicación nativa para iPhone e iPad diseñada para almacenar y proteger credenciales, códigos TOTP/MFA con escáner QR, generador de claves y biometría (Face ID / PIN). Cifrado avanzado 100% local sin depender de servidores en la nube.
+              </p>
+              <div class="tech-pills">
+                <span class="pill pill-highlight">iOS 17+</span>
+                <span class="pill">Cifrado Local</span>
+                <span class="pill">TOTP / MFA</span>
+                <span class="pill">Biometría</span>
+                <span class="pill">Privacidad 100%</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://apps.apple.com/es/app/gestor-seguro-ghostvault-app/id6782578535" target="_blank" rel="noopener noreferrer" class="btn btn-appstore">
+                  <svg class="apple-svg" viewBox="0 0 170 170" width="16" height="16" fill="currentColor">
+                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.58-7.73-11.65-14.07-5.59-8.7-10.05-18.7-13.38-30.01-3.33-11.31-5-22.39-5-33.24 0-16.14 4.16-29.41 12.49-39.81 8.32-10.4 18.7-15.68 31.14-15.85 4.35 0 9.29 1.14 14.83 3.42 5.54 2.28 9.29 3.5 11.24 3.66 1.74 0 5.67-1.33 11.79-3.99 6.13-2.66 11.39-3.83 15.79-3.51 11.53.64 21.05 4.9 28.56 12.78-9.87 5.98-14.72 14.35-14.55 25.11.16 8.58 3.37 15.82 9.63 21.72 6.26 5.9 13.78 9.38 22.56 10.44-2.18 6.52-4.91 13.56-8.19 21.13zm-31.57-111.4c0-7.38 2.65-14.12 7.95-20.21 5.3-6.1 11.69-9.64 19.17-10.64.44 1.3.66 2.6.66 3.9 0 7.39-2.73 14.28-8.19 20.67-5.46 6.39-11.96 10-19.51 10.83-.09-1.52-.08-3.04-.08-4.55z"/>
+                  </svg>
+                  <span data-i18n="btn_view_appstore">Ver en App Store</span>
+                  <i data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Cooked App (iOS / App Store) -->
+          <div class="project-card project-card-featured" data-category="ios">
+            <div class="project-visual bg-gradient-cooked">
+              <span class="store-badge-pill">
+                <svg class="apple-svg" viewBox="0 0 170 170" width="12" height="12" fill="currentColor">
+                  <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.58-7.73-11.65-14.07-5.59-8.7-10.05-18.7-13.38-30.01-3.33-11.31-5-22.39-5-33.24 0-16.14 4.16-29.41 12.49-39.81 8.32-10.4 18.7-15.68 31.14-15.85 4.35 0 9.29 1.14 14.83 3.42 5.54 2.28 9.29 3.5 11.24 3.66 1.74 0 5.67-1.33 11.79-3.99 6.13-2.66 11.39-3.83 15.79-3.51 11.53.64 21.05 4.9 28.56 12.78-9.87 5.98-14.72 14.35-14.55 25.11.16 8.58 3.37 15.82 9.63 21.72 6.26 5.9 13.78 9.38 22.56 10.44-2.18 6.52-4.91 13.56-8.19 21.13zm-31.57-111.4c0-7.38 2.65-14.12 7.95-20.21 5.3-6.1 11.69-9.64 19.17-10.64.44 1.3.66 2.6.66 3.9 0 7.39-2.73 14.28-8.19 20.67-5.46 6.39-11.96 10-19.51 10.83-.09-1.52-.08-3.04-.08-4.55z"/>
+                </svg>
+                <span>App Store</span>
+              </span>
+              <div class="app-icon-wrapper">
+                <img src="cooked-icon.png" alt="Cooked App Icon" class="app-card-icon" />
+              </div>
+              <span class="project-category" data-i18n="proj_cooked_badge">App iOS / Bienestar</span>
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title" data-i18n="proj_cooked_title">Cooked: Bienestar Digital</h3>
+                <span class="rating-tag status-live" data-i18n="tag_live">En Vivo</span>
+              </div>
+              <p class="project-subtitle" data-i18n="proj_cooked_sub">Control de tiempo de pantalla, descansos y gamificación de hábitos</p>
+              <p class="project-desc" data-i18n="proj_cooked_desc">
+                Herramienta integral para recuperar el equilibrio personal y reducir distracciones. Monitoreo de tiempo en pantalla con APIs nativas del sistema, métricas diarias/semanales, retos al aire libre verificados, logros gamificados y procesamiento 100% privado en el dispositivo.
+              </p>
+              <div class="tech-pills">
+                <span class="pill pill-highlight">iOS 17+</span>
+                <span class="pill">DeviceActivity API</span>
+                <span class="pill">Gamificación</span>
+                <span class="pill">Salud Digital</span>
+                <span class="pill">Privacidad 100%</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://apps.apple.com/es/app/cooked-bienestar-digital/id6790222315" target="_blank" rel="noopener noreferrer" class="btn btn-appstore">
+                  <svg class="apple-svg" viewBox="0 0 170 170" width="16" height="16" fill="currentColor">
+                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.58-7.73-11.65-14.07-5.59-8.7-10.05-18.7-13.38-30.01-3.33-11.31-5-22.39-5-33.24 0-16.14 4.16-29.41 12.49-39.81 8.32-10.4 18.7-15.68 31.14-15.85 4.35 0 9.29 1.14 14.83 3.42 5.54 2.28 9.29 3.5 11.24 3.66 1.74 0 5.67-1.33 11.79-3.99 6.13-2.66 11.39-3.83 15.79-3.51 11.53.64 21.05 4.9 28.56 12.78-9.87 5.98-14.72 14.35-14.55 25.11.16 8.58 3.37 15.82 9.63 21.72 6.26 5.9 13.78 9.38 22.56 10.44-2.18 6.52-4.91 13.56-8.19 21.13zm-31.57-111.4c0-7.38 2.65-14.12 7.95-20.21 5.3-6.1 11.69-9.64 19.17-10.64.44 1.3.66 2.6.66 3.9 0 7.39-2.73 14.28-8.19 20.67-5.46 6.39-11.96 10-19.51 10.83-.09-1.52-.08-3.04-.08-4.55z"/>
+                  </svg>
+                  <span data-i18n="btn_view_appstore">Ver en App Store</span>
+                  <i data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Restaurant Web -->
+          <div class="project-card" data-category="web">
             <div class="project-visual bg-gradient-orange">
               <div class="project-icon-large">
                 <i data-lucide="utensils"></i>
@@ -531,8 +644,8 @@
             </div>
           </div>
 
-          <!-- Project 2: Barber Shop Web -->
-          <div class="project-card">
+          <!-- Project 4: Barber Shop Web -->
+          <div class="project-card" data-category="web">
             <div class="project-visual bg-gradient-blue">
               <div class="project-icon-large">
                 <i data-lucide="scissors"></i>
@@ -553,8 +666,8 @@
             </div>
           </div>
 
-          <!-- Project 3: DAM Software & DB -->
-          <div class="project-card">
+          <!-- Project 5: DAM Software & DB -->
+          <div class="project-card" data-category="software">
             <div class="project-visual bg-gradient-purple">
               <div class="project-icon-large">
                 <i data-lucide="database"></i>

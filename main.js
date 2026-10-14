@@ -23,10 +23,11 @@ const translations = {
     tag_about: "Perfil Profesional",
     title_about: "Sobre Mí",
     about_highlight: "\"Responsable, creativo y con pasión por resolver problemas mediante tecnología moderna y soluciones visuales de alto impacto.\"",
-    about_p1: "Soy estudiante de segundo año de <strong>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</strong> en el <strong>IES Las Salinas</strong>. Cuento con una sólida formación en fundamentos de ingeniería de software, arquitectura orientada a objetos (POO), diseño y gestión de bases de datos relacionales, así como desarrollo web completo.",
+    about_p1: "Soy estudiante de segundo año de <strong>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</strong> en el <strong>IES Las Salinas</strong>. He diseñado, programado y publicado <strong>aplicaciones nativas en la App Store de Apple</strong>, contando con una sólida formación en ingeniería de software, arquitectura orientada a objetos (POO), bases de datos y desarrollo web.",
     about_p2: "Además del desarrollo de código, poseo habilidades destacadas en <strong>fotografía, edición y montaje de vídeo profesional</strong> y creación de contenido digital, lo que me permite aportar una visión integral tanto a nivel técnico como estético y de experiencia de usuario (UI/UX).",
+    stat_apps: "Apps en App Store",
     stat_course: "Año DAM Actual",
-    stat_commitment: "Compromiso & Aprendizaje",
+    stat_exp: "Experiencia Web",
     stat_languages: "Idiomas Dominados",
     title_languages: "Idiomas",
     lang_native: "Nativo",
@@ -47,13 +48,13 @@ const translations = {
     skill_java_desc: "Estructuras de datos, sintaxis moderna, clases y colecciones",
     skill_poo_desc: "Encapsulamiento, herencia, polimorfismo y abstracción limpia",
     skill_debug_desc: "Análisis de errores, debugging avanzado y optimización de código",
-    skill_apps_desc: "Aplicaciones multiplataforma desktop y mobile (DAM)",
+    skill_apps_desc: "Aplicaciones multiplataforma desktop y mobile (DAM, iOS, Java)",
     cat_web_title: "Desarrollo Web & Bases de Datos",
     cat_web_sub: "Web moderna, interfaces y persistencia",
     skill_html_desc: "Diseño web responsivo, layouts Flexbox, Grid y animaciones",
     skill_sql_desc: "Consultas avanzadas, joins, procedimientos y diseño de esquemas",
     skill_data_desc: "Diagramas ER, normalización e integridad relacional",
-    skill_ide_desc: "VS Code, IntelliJ IDEA, Eclipse, Git y herramientas de control",
+    skill_ide_desc: "VS Code, Xcode, IntelliJ IDEA, Eclipse, Git y control de versiones",
     cat_media_title: "Audiovisual & Creación Digital",
     cat_media_sub: "Contenido multimedia, fotografía y vídeo",
     skill_video_desc: "Postproducción, ritmo narrativo, transiciones y corrección",
@@ -79,6 +80,20 @@ const translations = {
     edu_bach_details: "Título oficial de bachillerato homologado con éxito, que otorga la base formativa y el acceso directo al ciclo formativo de grado superior en tecnología.",
     tag_proj: "Trabajos Realizados",
     title_proj: "Proyectos Destacados",
+    filter_all: "Todos",
+    filter_ios: "Apps iOS / App Store",
+    filter_web: "Desarrollo Web",
+    filter_software: "Software DAM",
+    btn_view_appstore: "Ver en App Store",
+    tag_live: "En Vivo",
+    proj_ghostvault_badge: "App iOS / Seguridad",
+    proj_ghostvault_title: "GhostVault: Gestor Seguro & MFA",
+    proj_ghostvault_sub: "Bóveda cifrada de contraseñas, tokens TOTP/MFA y seguridad biométrica",
+    proj_ghostvault_desc: "Aplicación nativa para iPhone e iPad diseñada para almacenar y proteger credenciales, códigos TOTP/MFA con escáner QR, generador de claves y biometría (Face ID / PIN). Cifrado avanzado 100% local sin depender de servidores en la nube.",
+    proj_cooked_badge: "App iOS / Bienestar",
+    proj_cooked_title: "Cooked: Bienestar Digital",
+    proj_cooked_sub: "Control de tiempo de pantalla, descansos y gamificación de hábitos",
+    proj_cooked_desc: "Herramienta integral para recuperar el equilibrio personal y reducir distracciones. Monitoreo de tiempo en pantalla con APIs nativas del sistema, métricas diarias/semanales, retos al aire libre verificados, logros gamificados y procesamiento 100% privado en el dispositivo.",
     proj1_badge: "Web Comercial",
     proj1_title: "Web para Restaurantes & Gastronomía",
     proj1_desc: "Diseño y desarrollo de sitios web dinámicos con carta digital interactiva, sistema de contacto directo por WhatsApp, reservas y optimización para visualización móvil fluida.",
@@ -117,7 +132,7 @@ const translations = {
     cv_download: "Download CV",
     status_text: "Available for internships and work opportunities",
     hero_hello: "Hello, I am",
-    hero_desc: "2nd-year student of <strong>Multiplatform Applications Development (DAM)</strong> with solid experience in software programming, web development, and professional audiovisual content creation.",
+    hero_desc: "2nd-year student of <strong>Multiplatform Applications Development (DAM)</strong> and software developer with <strong>published apps on the Apple App Store</strong>, web development, and professional audiovisual creation.",
     contact_me: "Contact Me",
     view_cv: "View Full CV",
     badge_dam: "2nd Year in progress",
@@ -125,10 +140,11 @@ const translations = {
     tag_about: "Professional Profile",
     title_about: "About Me",
     about_highlight: "\"Responsible, creative, and passionate about solving problems using modern technology and high-impact visual solutions.\"",
-    about_p1: "I am a second-year student of the <strong>Higher Degree in Multiplatform Applications Development (DAM)</strong> at <strong>IES Las Salinas</strong>. I have a strong foundation in software engineering, Object-Oriented Programming (OOP), relational database design and management, as well as full-stack web development.",
+    about_p1: "I am a second-year student of the <strong>Higher Degree in Multiplatform Applications Development (DAM)</strong> at <strong>IES Las Salinas</strong>. I have successfully designed, built, and published <strong>native apps on Apple's App Store</strong>, backed by strong software engineering fundamentals, Object-Oriented Programming (OOP), database architecture, and full-stack web development.",
     about_p2: "Beyond writing software, I have proven skills in <strong>photography, video editing, professional montage</strong>, and digital media production, bringing a well-rounded technical and UI/UX aesthetic perspective to every project.",
+    stat_apps: "Apps on App Store",
     stat_course: "Current DAM Year",
-    stat_commitment: "Commitment & Learning",
+    stat_exp: "Web Experience",
     stat_languages: "Languages Mastered",
     title_languages: "Languages",
     lang_native: "Native",
@@ -149,13 +165,13 @@ const translations = {
     skill_java_desc: "Data structures, modern syntax, classes, and collections",
     skill_poo_desc: "Encapsulation, inheritance, polymorphism, and clean abstraction",
     skill_debug_desc: "Error analysis, advanced debugging, and code optimization",
-    skill_apps_desc: "Cross-platform desktop and mobile software (DAM)",
+    skill_apps_desc: "Cross-platform desktop and mobile software (DAM, iOS, Java)",
     cat_web_title: "Web Development & Databases",
     cat_web_sub: "Modern web, interfaces, and persistence",
     skill_html_desc: "Responsive web design, Flexbox, CSS Grid layouts, and animations",
     skill_sql_desc: "Advanced SQL queries, joins, stored procedures, schema design",
     skill_data_desc: "ER diagrams, database normalization, relational integrity",
-    skill_ide_desc: "VS Code, IntelliJ IDEA, Eclipse, Git, version control workflows",
+    skill_ide_desc: "VS Code, Xcode, IntelliJ IDEA, Eclipse, Git, version control workflows",
     cat_media_title: "Audiovisual & Digital Creation",
     cat_media_sub: "Multimedia content, photo, and video",
     skill_video_desc: "Post-production, narrative pacing, color correction, transitions",
@@ -181,6 +197,20 @@ const translations = {
     edu_bach_details: "Officially accredited high school education providing full eligibility and direct academic entry to higher technological degrees in Spain.",
     tag_proj: "Portfolio Works",
     title_proj: "Featured Projects",
+    filter_all: "All",
+    filter_ios: "iOS Apps / App Store",
+    filter_web: "Web Development",
+    filter_software: "DAM Software",
+    btn_view_appstore: "View on App Store",
+    tag_live: "Live",
+    proj_ghostvault_badge: "iOS App / Security",
+    proj_ghostvault_title: "GhostVault: Secure Vault & MFA",
+    proj_ghostvault_sub: "Encrypted password vault, TOTP tokens & biometric security",
+    proj_ghostvault_desc: "Native iPhone & iPad application engineered to securely store credentials, TOTP/MFA authenticator codes with QR scanner, password generator, and biometric access (Face ID / PIN). Operates with 100% on-device advanced encryption with zero cloud dependency.",
+    proj_cooked_badge: "iOS App / Wellness",
+    proj_cooked_title: "Cooked: Digital Wellbeing",
+    proj_cooked_sub: "Screen time tracking, digital detox & habit gamification",
+    proj_cooked_desc: "Comprehensive solution to regain digital focus and balance screen time. Features native tracking with Apple DeviceActivity APIs, daily/weekly analytics dashboards, verified outdoor breaks, gamified level milestones, and 100% on-device private processing.",
     proj1_badge: "Commercial Web",
     proj1_title: "Restaurant & Gastronomy Website",
     proj1_desc: "Interactive website featuring dynamic digital menu, direct WhatsApp ordering/reservations, and seamless mobile responsiveness.",
@@ -216,6 +246,7 @@ let currentLang = 'es';
 // Typewriter roles
 const rolesEs = [
   "Desarrollador de Software",
+  "Desarrollador iOS & Multiplataforma",
   "Estudiante DAM (2º Año)",
   "Desarrollador Web",
   "Creador de Contenido Audiovisual"
@@ -223,6 +254,7 @@ const rolesEs = [
 
 const rolesEn = [
   "Software Developer",
+  "iOS & Multiplatform Developer",
   "DAM Student (2nd Year)",
   "Web Developer",
   "Audiovisual Content Creator"
@@ -285,6 +317,30 @@ function setLanguage(lang) {
   typeWriter();
   
   // Re-create icons if any were re-rendered
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
+// Filter projects by category
+function filterProjects(category) {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-filter') === category);
+  });
+
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
+    const cardCat = card.getAttribute('data-category');
+    if (category === 'all' || cardCat === category) {
+      card.style.display = 'flex';
+      card.classList.remove('filter-hidden');
+    } else {
+      card.style.display = 'none';
+      card.classList.add('filter-hidden');
+    }
+  });
+
   if (window.lucide) {
     window.lucide.createIcons();
   }

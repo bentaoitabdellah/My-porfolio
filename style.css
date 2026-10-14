@@ -728,8 +728,8 @@ main {
 
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   margin-top: 36px;
   padding-top: 24px;
   border-top: 1px solid var(--border-subtle);
@@ -1187,9 +1187,61 @@ main {
 }
 
 /* PROJECTS SECTION */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.filter-btn.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+  font-weight: 600;
+}
+
+.filter-count {
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
 }
 
@@ -1202,6 +1254,7 @@ main {
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .project-card:hover {
@@ -1210,12 +1263,37 @@ main {
   box-shadow: var(--shadow-glow);
 }
 
+.project-card.filter-hidden {
+  display: none !important;
+}
+
+.project-card-featured {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-card-featured:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 15px 45px rgba(56, 189, 248, 0.25);
+}
+
 .project-visual {
-  height: 180px;
+  height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+}
+
+.bg-gradient-ghostvault {
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.28) 0%, rgba(15, 23, 42, 0.95) 75%), linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.bg-gradient-cooked {
+  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.28) 0%, rgba(15, 23, 42, 0.95) 75%), linear-gradient(135deg, rgba(6, 78, 59, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 .bg-gradient-orange {
@@ -1231,6 +1309,53 @@ main {
 .bg-gradient-purple {
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(236, 72, 153, 0.15) 100%);
   border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.app-icon-wrapper {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.25);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card:hover .app-icon-wrapper {
+  transform: scale(1.1) translateY(-4px);
+}
+
+.app-card-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.store-badge-pill {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(10, 13, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.apple-svg {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .project-icon-large {
@@ -1264,10 +1389,43 @@ main {
   flex-grow: 1;
 }
 
+.project-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
 .project-title {
   font-size: 1.25rem;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   line-height: 1.35;
+}
+
+.rating-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: var(--accent-amber);
+  white-space: nowrap;
+}
+
+.rating-tag.status-live {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: var(--accent-emerald);
+}
+
+.project-subtitle {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 .project-desc {
@@ -1276,6 +1434,52 @@ main {
   line-height: 1.65;
   margin-bottom: 24px;
   flex-grow: 1;
+}
+
+.pill-highlight {
+  background: rgba(56, 189, 248, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  color: var(--accent-cyan) !important;
+  font-weight: 600;
+}
+
+.project-card-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.btn-appstore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-appstore:hover {
+  background: #ffffff;
+  color: #0b0f19;
+  border-color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-appstore .apple-svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-appstore:hover .apple-svg {
+  transform: scale(1.1);
 }
 
 /* CONTACT SECTION */
@@ -1734,7 +1938,7 @@ main {
   }
 
   .about-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 14px;
     margin-top: 24px;
   }
